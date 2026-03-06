@@ -4,9 +4,10 @@
 :root {
   --spotify-green: #1db954;
   --spotify-green-dim: #1aa34a;
-  --bg-primary: #0a0a0f;
+  --bg-primary: #0a0a0a;
   --bg-card: rgba(255, 255, 255, 0.03);
   --bg-card-border: rgba(255, 255, 255, 0.06);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -23,6 +24,16 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100dvh;
   overflow: hidden;
+}
+
+/* Hide background and gradients when embedded */
+:root:has(.is-embedded) body {
+  background: transparent !important;
+  color: #ededed !important;
+}
+
+:root:has(.is-embedded) body::before {
+  display: none !important;
 }
 
 /* Ambient background */
